@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import PetOwnerStore from "./PetOwnerStore";
+import PetList from "./components/PetList";
+import OwnerList from "./components/OwnerList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const store = new PetOwnerStore();
+
+    return (
+        <div className="App">
+            <h3>Pet List</h3>
+            <PetList store={store} />
+            <hr />
+            <hr />
+            <h3>Owner List</h3>
+            <OwnerList store={store} />
+        </div>
+    );
+
 }
 
 export default App;
